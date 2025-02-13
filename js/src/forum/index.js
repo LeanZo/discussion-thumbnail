@@ -14,9 +14,7 @@ app.initializers.add('fof/discussion-thumbnail', () => {
     Discussion.prototype.customThumbnail = Model.attribute('customThumbnail');
 
     extend(DiscussionListItem.prototype, 'view', function (vdom) {
-        const image = this.attrs.discussion.customThumbnail();
-
-        if (!image) return;
+        
 
         const content = find(vdom, 'DiscussionListItem-content');
 
@@ -24,16 +22,21 @@ app.initializers.add('fof/discussion-thumbnail', () => {
 
         const tooltip = content.children.find((e) => e?.tag === Tooltip);
         const author = find(tooltip, 'DiscussionListItem-author');
+
+        if (app.forum.attribute('fof-discussion-thumbnail.link_to_discussion')) {
+            author.attrs.href = app.route.discussion(this.attrs.discussion);
+        }
+        
+        const image = this.attrs.discussion.customThumbnail();
+
+        if (!image) return;
+        
         const avatar = find(author, 'Avatar');
 
         if (!avatar) return;
 
         delete avatar.attrs.src;
 
-        author.children[author.children.indexOf(avatar)] = <DiscussionThumbnail elementAttrs={avatar.attrs} src={image} />;
-
-        if (app.forum.attribute('fof-discussion-thumbnail.link_to_discussion')) {
-            author.attrs.href = app.route.discussion(this.attrs.discussion);
-        }
+        author.children[author.children.indexOf(avatar)] = <DiscussionThumbnail elementAttrs={avatar.attrs} src={image} />;        
     });
 });
