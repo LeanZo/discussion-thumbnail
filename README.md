@@ -9,13 +9,13 @@ A [Flarum](http://flarum.org) extension. Replace author avatars with the first i
 Install manually with composer:
 
 ```sh
-composer require fof/discussion-thumbnail:"*"
+composer require leanzo/discussion-thumbnail:"*"
 ```
 
 ### Updating
 
 ```sh
-composer update fof/discussion-thumbnail
+composer update leanzo/discussion-thumbnail
 ```
 
 ### Links
