@@ -10,7 +10,7 @@ import DiscussionThumbnail from './components/DiscussionThumbnail';
 
 const find = (obj, clazz) => obj && obj.children && obj.children.filter((e) => get(e, 'attrs.className', '').indexOf(clazz) !== -1)[0];
 
-app.initializers.add('fof/discussion-thumbnail', () => {
+app.initializers.add('leanzo/discussion-thumbnail', () => {
     Discussion.prototype.customThumbnail = Model.attribute('customThumbnail');
 
     extend(DiscussionListItem.prototype, 'view', function (vdom) {
