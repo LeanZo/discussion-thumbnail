@@ -25,7 +25,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "FoF\\DiscussionThumbnail\\": "src/"
+            "leanzo\\DiscussionThumbnail\\": "src/"
         }
     },
     "extra": {
