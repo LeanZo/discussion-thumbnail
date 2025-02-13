@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\DiscussionThumbnail\Listener;
+namespace leanzo\DiscussionThumbnail\Listener;
 
 use Flarum\Api\Serializer\BasicDiscussionSerializer;
 use Flarum\Discussion\Discussion;
