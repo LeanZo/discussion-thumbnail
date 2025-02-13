@@ -1,5 +1,5 @@
 {
-  "name": "@fof/discussion-thumbnail",
+  "name": "@leanzo/discussion-thumbnail",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
